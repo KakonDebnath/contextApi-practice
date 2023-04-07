@@ -6,7 +6,7 @@ const Home = () => {
     const {handleBuy} = useContext(ProductsContext)
     const products = useLoaderData();
     return (
-        <div className='grid grid-cols-3 gap-3 my-20'>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-3 my-5 md:my-20'>
             {
                 products.map((product) =>
                     <div key={product._id}

@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 const Navbar = ({ router }) => {
+    const [open, setOpen] = useState(false);
+    const handleOpen = ()=>{
+        setOpen(!open);
+    }
     return (
         <div>
-            <nav className='bg-lime-300 flex justify-between items-center px-5 py-3'>
-                <div className="">
+            <nav className='bg-lime-300 md:flex justify-between items-center px-5 py-3'>
+                <div className="flex md:block justify-between items-center py-3 md:py-0">
                     <Link to="/">Logo</Link>
-                </div>
-                <div className="">
-                    <ul className='flex'>
+                    <p onClick={handleOpen} className='block md:hidden'>
                         {
-                            router.map((route) => <li key={route.id} className='px-5 py-3'>
+                            open?<XMarkIcon className="h-6 w-6 cursor-pointer"/>:<Bars3Icon className="h-6 w-6 cursor-pointer"/>
+                        }
+                    </p>
+                </div>
+                <div className={open?`${'block'}`:`${'hidden md:block'}`}>
+                    <ul className='md:flex'>
+                        {
+                            router.map((route) => <li key={route.id} className='px-5 py-1 md:py-3 my-1 md:my-0 rounded-md md:rounded-none bg-white md:bg-lime-300'>
                                 <NavLink
                                     to={route.path}
                                     className={({ isActive }) =>

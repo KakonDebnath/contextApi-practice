@@ -6,8 +6,8 @@ import Item from './Item';
 const Sidebar = () => {
     const [products, setProducts] = useContext(CartContext)
     return (
-        <div className='sticky top-0 mb-5'>
-            <h2 className='text-center py-3 rounded bg-lime-300 my-5'>Order History: {products.length}</h2>
+        <div className='sticky top-0 mb-5 w-2/3 md:w-full mx-auto'>
+            <h2 className='text-center py-3 rounded bg-lime-300 my-2 md:my-5'>Order History: {products.length}</h2>
             <div>
                 <ul>
                     {

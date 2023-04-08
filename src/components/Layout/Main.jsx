@@ -56,7 +56,7 @@ const Main = () => {
                 <div className='max-w-7xl mx-auto'>
                     <Navbar router={router}></Navbar>
                     <div className='grid md:grid-cols-4 grid-cols-1 gap-4'>
-                        <section className='md:col-span-3'>
+                        <section className='md:col-span-3 min-h-[calc(100vh-120px)]'>
                             <Outlet></Outlet>
                         </section>
                         <section>

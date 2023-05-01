@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { CartContext, ProductsContext } from '../Layout/Main';
+import { getShoppingCart } from '../../Utility/fakeDb';
 
 const Cart = () => {
     const [products, setProducts] = useContext(CartContext);
     const {handleDeleteItem} = useContext(ProductsContext);
+
     return (
         <div>
             {
